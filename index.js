@@ -1,6 +1,11 @@
+const BASE_URL = 'https://anapioficeandfire.com/api/books';
+
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  fetch(BASE_URL)
+    .then(response => response.json())
+    .then(data => renderBooks(data))
+    .catch(error => console.log(error))
 }
 
 function renderBooks(books) {
